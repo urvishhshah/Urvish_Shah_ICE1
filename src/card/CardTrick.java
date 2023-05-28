@@ -27,6 +27,10 @@ public class CardTrick {
             
             magicHand[i] = card;
         }
+       
+        Card newLuckyCard = new Card();
+        newLuckyCard.setValue(4);
+        newLuckyCard.setSuit("Diamonds");
                 
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter your card value (1-13): ");
@@ -41,7 +45,7 @@ public class CardTrick {
         
         boolean appear = false;
         for (Card maincard : magicHand) {
-            if (maincard.getSuit().equalsIgnoreCase(userChoice.getSuit()) && maincard.getValue() == userChoice.getValue()){
+            if (maincard.getSuit().equalsIgnoreCase(userChoice.getSuit()) && maincard.getValue() == userChoice.getValue() || newLuckyCard.getValue() == userChoice.getValue() && newLuckyCard.getSuit().equalsIgnoreCase(userChoice.getSuit())){
                 appear = true;
                 break;
             }
