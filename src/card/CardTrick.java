@@ -12,7 +12,7 @@ public class CardTrick {
     
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
-        // Array for storing random values
+
         int[] magicCards = new int[7]; 
         
         for (int i = 0; i < magicHand.length; i++) {
@@ -28,7 +28,6 @@ public class CardTrick {
             magicHand[i] = card;
         }
                 
-        // Asking the user to enter card value and suit for as guess
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter your card value (1-13): ");
         int chosenValue = scan.nextInt();
@@ -36,12 +35,10 @@ public class CardTrick {
         System.out.println("Enter your card suit (Hearts, Diamonds, Spades, Clubs): ");
         String chosenSuit = scan.next();
         
-        // Create user's choosen card
         Card userChoice = new Card();
         userChoice.setValue(chosenValue);
         userChoice.setSuit(chosenSuit);
         
-        // Search for the user's card value in1 randomValues
         boolean appear = false;
         for (Card maincard : magicHand) {
             if (maincard.getSuit().equalsIgnoreCase(userChoice.getSuit()) && maincard.getValue() == userChoice.getValue()){
